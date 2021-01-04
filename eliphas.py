@@ -33,7 +33,7 @@ class Profile:
         full_path = str(path) + str(profile_path)
         shutil.copy2(file_to_copy, full_path)
         os.chdir(root)
-        open_build = 'cmd /c "firefox.exe -no-remote -p eliphas{}"'.format(n+1)
+        open_build = 'cmd /c "set XPCSHELL_TEST_PROFILE_DIR=foo & firefox.exe -no-remote -p eliphas{}"'.format(n+1)
         os.system(open_build)
         n +=1
     os.chdir(root)
